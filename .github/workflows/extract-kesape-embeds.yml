@@ -1,5 +1,7 @@
 name: Extract Kesape embeds
 on:
+  push:
+    branches: ["main"]
   workflow_dispatch:
 jobs:
   extract:
