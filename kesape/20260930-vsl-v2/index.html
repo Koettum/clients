@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Kesape Bike Camp — VSL</title>
+  <meta name="description" content="Deja de sobrevivir a las bajadas. Aprende a pilotar tu bici con el Método Kesape.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f4ef;
+      --paper:#ffffff;
+      --ink:#101010;
+      --muted:#626262;
+      --line:#dedbd3;
+      --accent:#ff5b35;
+      --accent-dark:#e94320;
+      --soft:#ece9e1;
+      --max:1040px;
+      --narrow:840px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Inter,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .wrap{width:min(calc(100% - 34px),var(--max));margin:auto}
+    .narrow{width:min(calc(100% - 34px),var(--narrow));margin:auto}
+    .hero{padding:36px 0 72px;text-align:center}
+    .logo{
+      width:150px;
+      margin:0 auto 54px;
+      filter:brightness(0);
+    }
+    .pre{
+      font-size:13px;
+      line-height:1.35;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin:0 auto 14px;
+      color:#303030;
+    }
+    h1{
+      max-width:960px;
+      margin:0 auto;
+      font-size:clamp(41px,6.3vw,76px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:900;
+      text-wrap:balance;
+    }
+    h1 em{
+      color:var(--accent);
+      font-style:normal;
+    }
+    .sub{
+      max-width:780px;
+      margin:24px auto 0;
+      font-size:clamp(17px,2vw,22px);
+      line-height:1.48;
+      color:#444;
+      text-wrap:balance;
+    }
+    .video-frame{
+      margin:42px auto 0;
+      width:min(100%,900px);
+      padding:10px;
+      background:#111;
+      border-radius:8px;
+      box-shadow:0 22px 55px rgba(0,0,0,.18);
+    }
+    .video{
+      position:relative;
+      padding-top:56.25%;
+      background:#000;
+      overflow:hidden;
+    }
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .under-video{
+      margin:14px auto 0;
+      font-size:14px;
+      font-weight:700;
+      color:#343434;
+    }
+    .arrow{color:var(--accent);font-size:20px;margin-left:5px}
+
+    .form-area{
+      padding:0 0 86px;
+    }
+    .form-box{
+      width:min(100%,780px);
+      margin:auto;
+      background:var(--paper);
+      border:1px solid #ddd8cf;
+      padding:34px;
+      box-shadow:0 13px 40px rgba(22,18,10,.07);
+    }
+    .form-box h2{
+      margin:0;
+      text-align:center;
+      font-size:clamp(25px,3vw,36px);
+      letter-spacing:-.035em;
+      line-height:1.05;
+    }
+    .form-box .intro{
+      max-width:610px;
+      margin:12px auto 28px;
+      text-align:center;
+      color:var(--muted);
+      line-height:1.5;
+      font-size:14px;
+    }
+    .event{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 24px;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+    .event span{background:#f0ede5;padding:9px 12px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+    input,select{
+      min-height:52px;
+      border:1px solid #cfcac0;
+      background:#fff;
+      border-radius:0;
+      padding:0 13px;
+      width:100%;
+      color:#111;
+      outline:none;
+    }
+    input:focus,select:focus{border-color:#111}
+    .btn{
+      margin-top:15px;
+      border:0;
+      width:100%;
+      min-height:58px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:900;
+      font-size:14px;
+      cursor:pointer;
+      text-transform:uppercase;
+      letter-spacing:.025em;
+    }
+    .btn:hover{background:var(--accent-dark)}
+    .privacy{
+      margin:11px 0 0;
+      text-align:center;
+      color:#8a867f;
+      font-size:10px;
+      line-height:1.45;
+    }
+    .demo{
+      display:none;
+      margin-top:12px;
+      padding:12px;
+      background:#f1eee6;
+      font-size:12px;
+      font-weight:700;
+      text-align:center;
+    }
+
+    section.proof{
+      padding:90px 0;
+      background:#111;
+      color:#fff;
+    }
+    .kicker{
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:13px;
+    }
+    .proof h2,.voices h2{
+      margin:0;
+      font-size:clamp(38px,5.2vw,64px);
+      letter-spacing:-.055em;
+      line-height:.98;
+      font-weight:900;
+      text-wrap:balance;
+    }
+    .proof-grid{
+      margin-top:38px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border-top:1px solid #363636;
+      border-bottom:1px solid #363636;
+    }
+    .result{
+      min-height:245px;
+      padding:30px 24px;
+      border-right:1px solid #363636;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .result:last-child{border-right:0}
+    .result .big{
+      font-size:clamp(42px,5vw,64px);
+      line-height:.95;
+      font-weight:900;
+      letter-spacing:-.06em;
+      color:#fff;
+    }
+    .result .big small{
+      display:block;
+      margin-top:8px;
+      font-size:13px;
+      line-height:1.25;
+      letter-spacing:0;
+      color:var(--accent);
+      text-transform:uppercase;
+    }
+    .result p{
+      margin:20px 0 0;
+      color:#b9b9b9;
+      line-height:1.5;
+      font-size:14px;
+    }
+    .proof-foot{
+      margin-top:25px;
+      font-size:13px;
+      line-height:1.55;
+      color:#9d9d9d;
+      max-width:730px;
+    }
+
+    .voices{
+      padding:88px 0 92px;
+      background:var(--bg);
+    }
+    .voices-head{
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:40px;
+      align-items:end;
+      margin-bottom:36px;
+    }
+    .voices-head p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:15px;
+    }
+    .testimonial-video{
+      width:min(100%,900px);
+      margin:0 auto 28px;
+      padding:8px;
+      background:#111;
+    }
+    .testimonial-video .video{border:0}
+    .quotes{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      width:min(100%,900px);
+      margin:auto;
+    }
+    .quote{
+      background:#fff;
+      border:1px solid #ddd8cf;
+      padding:24px;
+      min-height:150px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .quote q{
+      font-size:18px;
+      font-weight:800;
+      line-height:1.25;
+      quotes:"“" "”";
+    }
+    .quote span{
+      margin-top:22px;
+      color:#77736c;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      font-weight:800;
+    }
+    .source-note{
+      width:min(100%,900px);
+      margin:18px auto 0;
+      font-size:11px;
+      color:#86827a;
+    }
+
+    .final{
+      padding:90px 0 96px;
+      text-align:center;
+      background:#fff;
+      border-top:1px solid #e2ded6;
+    }
+    .final h2{
+      max-width:800px;
+      margin:0 auto;
+      font-size:clamp(38px,5vw,60px);
+      line-height:1;
+      letter-spacing:-.055em;
+      font-weight:900;
+    }
+    .final p{
+      max-width:620px;
+      margin:18px auto 0;
+      color:#67645e;
+      line-height:1.55;
+    }
+    .final a{
+      display:inline-flex;
+      margin-top:26px;
+      min-height:56px;
+      padding:0 28px;
+      align-items:center;
+      justify-content:center;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      font-weight:900;
+      font-size:13px;
+      text-transform:uppercase;
+    }
+    footer{
+      padding:23px 0;
+      text-align:center;
+      font-size:10px;
+      color:#969188;
+      background:#fff;
+    }
+
+    @media(max-width:760px){
+      .hero{padding:28px 0 56px}
+      .logo{width:120px;margin-bottom:38px}
+      h1{font-size:clamp(38px,12vw,58px)}
+      .video-frame{margin-top:32px;padding:5px}
+      .form-box{padding:24px 17px}
+      .fields{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      section.proof,.voices,.final{padding:66px 0}
+      .proof-grid{grid-template-columns:1fr}
+      .result{min-height:auto;border-right:0;border-bottom:1px solid #363636;padding:26px 0}
+      .result:last-child{border-bottom:0}
+      .voices-head{grid-template-columns:1fr;gap:17px}
+      .quotes{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <img class="logo" src="https://escuelakesape.com/wp-content/uploads/2024/08/logo_Asset-2.png" alt="Kesape">
+        <p class="pre">Para riders de MTB que ya salen al monte, pero quieren dejar de bloquearse cuando el terreno se complica</p>
+        <h1>Resetea tu técnica y aprende a <em>pilotar tu bici</em> en solo 3 días.</h1>
+        <p class="sub">Sin teoría aburrida, sin tener que cambiar de bici y sin obligarte a hacer cosas para las que aún no estás preparado. Progresión real, en grupos reducidos y adaptados a tu nivel.</p>
+
+        <div class="video-frame">
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/fgzVU9m2Fyo?rel=0&modestbranding=1" title="VSL Kesape Bike Camp" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+        <p class="under-video">Mira el vídeo completo y después completa el formulario para recibir la información de la próxima edición.<span class="arrow">↓</span></p>
+      </div>
+    </section>
+
+    <section class="form-area" id="formulario">
+      <div class="narrow">
+        <form class="form-box" id="preview-form">
+          <h2>¿Quieres vivir el próximo Bike Camp?</h2>
+          <p class="intro">Déjanos tus datos. Esta demo reproduce el lugar que ocupará el formulario de GoHighLevel en la versión final.</p>
+
+          <div class="event">
+            <span>Tremp</span>
+            <span>30 y 31 de octubre + 1 de noviembre de 2026</span>
+          </div>
+
+          <div class="fields">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" type="tel" placeholder="+34 600 000 000" required>
+            </div>
+            <div class="field full">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="field full">
+              <label for="level">¿Dónde estás ahora mismo?</label>
+              <select id="level" name="level" required>
+                <option value="">Elige una opción</option>
+                <option>Hay zonas técnicas que todavía bajo andando</option>
+                <option>Bajo casi todo, pero voy demasiado tenso o frenando</option>
+                <option>Tengo nivel y quiero ganar velocidad, flow o aprender a saltar</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn" type="submit">QUIERO INFORMACIÓN DEL PRÓXIMO BIKE CAMP</button>
+          <div class="demo" id="demo">Formulario de demostración. En producción se conectará con GoHighLevel.</div>
+          <p class="privacy">Página de previsualización. Este formulario no almacena ni envía datos.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="wrap">
+        <div class="kicker">Lo que ya está detrás del Método Kesape</div>
+        <h2>Una progresión diseñada para que el control deje de ser cuestión de suerte.</h2>
+
+        <div class="proof-grid">
+          <div class="result">
+            <div class="big">+300<small>alumnos</small></div>
+            <p>El método teórico-práctico de Kesape ya se ha aplicado con cientos de riders.</p>
+          </div>
+          <div class="result">
+            <div class="big">3<small>días de inmersión</small></div>
+            <p>Primero se practica sin riesgo. Después se traslada la técnica al terreno real, paso a paso.</p>
+          </div>
+          <div class="result">
+            <div class="big">+12h<small>de formación</small></div>
+            <p>Corrección técnica, repetición y aplicación real durante el Bike Camp.</p>
+          </div>
+        </div>
+
+        <p class="proof-foot">Kevin Sánchez es entrenador de MTB y BMX y fue 3º del mundo en BMX en 2015. El foco del Bike Camp no es convertirte en profesional: es ayudarte a ganar control, seguridad y confianza sobre la bici.</p>
+      </div>
+    </section>
+
+    <section class="voices">
+      <div class="wrap">
+        <div class="voices-head">
+          <div>
+            <div class="kicker">Testimonios</div>
+            <h2>Ellos ya lo han vivido.</h2>
+          </div>
+          <p>Este vídeo está empotrado desde el mismo YouTube que utiliza actualmente la página de Kesape; no es un placeholder ni una recreación.</p>
+        </div>
+
+        <div class="testimonial-video">
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/Jk8AXujoFnQ?rel=0&modestbranding=1" title="Testimonio Bike Camp Kesape" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="quotes">
+          <div class="quote"><q>Muy guay. Os lo recomiendo totalmente.</q><span>Rider · Bike Camp Kesape</span></div>
+          <div class="quote"><q>El curso es muy bueno. Una pasada.</q><span>Rider · Bike Camp Kesape</span></div>
+          <div class="quote"><q>Estoy encantado. Una experiencia muy buena.</q><span>Rider · Bike Camp Kesape</span></div>
+        </div>
+
+        <p class="source-note">Testimonios y vídeo tomados del material ya publicado por Kesape.</p>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2>Deja de sobrevivir a las rutas. Empieza a pilotar.</h2>
+        <p>Si ya sales al monte y sientes que tu técnica no está al nivel de tu bici, el siguiente Bike Camp puede ser el punto de inflexión.</p>
+        <a href="#formulario">QUIERO INFORMACIÓN DEL PRÓXIMO BIKE CAMP</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Preview cliente · Kesape Bike Camp · V2</footer>
+
+  <script>
+    document.getElementById('preview-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('demo').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
