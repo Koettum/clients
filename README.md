@@ -1,15 +1,23 @@
-# Kesape Bike Camp — Landing V1
+# Client Previews
 
-Preview static landing for the Kesape Bike Camp campaign.
+Internal repository used by Koettum to host and share client-facing previews, landing pages, prototypes, and campaign assets.
 
-- Golden-reference-inspired VSL layout
-- YouTube VSL: `fgzVU9m2Fyo`
-- Provisional event: Tremp — 30/31 Oct + 1 Nov 2026
-- Demo form ready to be replaced by GoHighLevel embed
-- Responsive desktop/mobile
+## Structure
 
-## Local preview
-Open `index.html` in a browser.
+Projects are organized by client and dated version:
 
-## Production note
-The form in this repository is intentionally non-functional and does not store personal data. Replace the form block with the GoHighLevel embed before production.
+```
+<client>/<YYYYMMDD>-<reference>/
+```
+
+Example:
+
+```
+qsape/20260930-vsl/
+```
+
+Each project should be self-contained so multiple clients and versions can coexist without affecting one another.
+
+## Deployment
+
+GitHub Pages publishes the repository as a static preview environment. Individual projects are accessed through their corresponding folder path.
