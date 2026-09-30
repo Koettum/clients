@@ -13,7 +13,7 @@ Projects are organized by client and dated version:
 Example:
 
 ```
-qsape/20260930-vsl/
+kesape/20260930-vsl/
 ```
 
 Each project should be self-contained so multiple clients and versions can coexist without affecting one another.
